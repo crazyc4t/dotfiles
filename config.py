@@ -20,6 +20,7 @@ light = "f1ffff"
 inactive = "404040"
 purple = "6600ff"
 turquese = "00ccff"
+
 keys = [
 
     # ----------------------- QTILE WINDOW MANAGMENT ------------------------ #
