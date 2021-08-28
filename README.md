@@ -15,7 +15,7 @@ power of python!
 |Alacritty| Lighting fast terminal emulator|
 |Thunar| File explorer|
 |Pulseaudio| Audio for the system|
-| Xorg| Dsplay server|
+| Xorg| Display server|
 |Nvim| Best vim editor out there|
 |Atom| GUI text editor|
 |VLC| Multimedia
