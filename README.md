@@ -1,5 +1,6 @@
 # The dotfiles of my window managers!
-
+![GitHub](https://img.shields.io/github/license/crazyc4t/dotfiles?color=brightgreen)
+![GitHub last commit](https://img.shields.io/github/last-commit/crazyc4t/dotfiles)
 ## Qtile:
 
 ![Qtile screenshot!](screenshot.png "qtile conf")
