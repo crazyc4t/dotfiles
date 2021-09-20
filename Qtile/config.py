@@ -1,7 +1,12 @@
-# / __| __ _ (_) __| |      | \| | ___  __| | ___  _ _
-# \__ \/ _` || |/ _` |      | .  |/ -_)/ _` |/ -_)| '_|
-# |___/\__/_||_|\__/_|      |_|\_|\___|\__/_|\___||_|
-
+# ________  ________  ________  ________      ___    ___ ________ ___   ___  _________   
+#|\   ____\|\   __  \|\   __  \|\_____  \    |\  \  /  /|\   ____\\  \ |\  \|\___   ___\ 
+#\ \  \___|\ \  \|\  \ \  \|\  \\|___/  /|   \ \  \/  / | \  \___\ \  \\_\  \|___ \  \_| 
+# \ \  \    \ \   _  _\ \   __  \   /  / /    \ \    / / \ \  \   \ \______  \   \ \  \  
+#  \ \  \____\ \  \\  \\ \  \ \  \ /  /_/__    \/  /  /   \ \  \___\|_____|\  \   \ \  \ 
+#   \ \_______\ \__\\ _\\ \__\ \__\\________\__/  / /      \ \_______\    \ \__\   \ \__\
+#    \|_______|\|__|\|__|\|__|\|__|\|_______|\___/ /        \|_______|     \|__|    \|__|
+#                                           \|___|/                                      
+#--------------------------------https://saidneder.tech/--------------------------------                                                                                                                                                                           
 # --------------- Qtile Conf ----------------#
 # https://docs.qtile.org/en/latest/index.html#
 
@@ -13,13 +18,12 @@ from libqtile.lazy import lazy
 mod = "mod4"  # Supr key
 
 # Colors
+# Purple Theme
 
-focus = "0000ff"  # blue
+focus = "7300e6"  # Purple
 dark = "0f101a"
 light = "f1ffff"
 inactive = "404040"
-purple = "6600ff"
-turquese = "00ccff"
 
 keys = [
 
@@ -90,7 +94,7 @@ keys = [
     Key([], "Print", lazy.spawn("spectacle")),
 
     # Web browser
-    Key([mod], "f", lazy.spawn("firefox")),
+    Key([mod], "g", lazy.spawn("google-chrome-stable")),
 
     # Keyboard Layouts
     Key([mod], "z", lazy.spawn("setxkbmap es olpc")),
@@ -118,12 +122,18 @@ keys = [
     # Atom Text Editor
     Key([mod], "a", lazy.spawn("atom")),
 
+    # Lock Screen
+    Key([mod, "control"], "l", lazy.spawn("betterlockscreen -l")),
+
+    # BoostNote
+    Key([mod], "b", lazy.spawn("boostnote")),
+
 ]
 
 # 1 = Firefox | 2 = Terminal | 3 = Programming | 4 = File Explorer | 5 = Discord | 6 = Spotify | 7 = School #
 
 groups = [Group(i) for i in [
-    "  ", "  ", "  ", "  ", " ﭮ ", " 阮 ", "  ",
+    "  ", "  ", "  ", "  ", " ﭮ ", " 阮 ", "  ",
 ]]
 
 for i, group in enumerate(groups):
@@ -135,7 +145,7 @@ for i, group in enumerate(groups):
         Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
     ])
 
-# Preferred Layouts = MonadTall | Matrix | Max | MonadWide (In order of usage)
+# Preferred Layouts = MonadTall | Matrix | Max (In order of usage)
 
 
 layout_conf = {
@@ -152,7 +162,7 @@ layouts = [
     # layout.Bsp(),
     layout.Matrix(**layout_conf),
     layout.Max(),
-    layout.MonadWide(**layout_conf),
+    # layout.MonadWide(**layout_conf),
     # layout.RatioTile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
@@ -195,20 +205,20 @@ screens = [
                     other_screen_border=dark,
                     disable_drag=True
                 ),
-                widget.WindowName(),
+                widget.WindowName(fontsize=14, foreground=focus),
                 widget.Systray(),
                 widget.KeyboardLayout(
                     configured_keyboards=["us", "es olpc"],
                     display_map={"us": "us", "es olpc": "es"}
                 ),
                 widget.CurrentLayout(),
-                widget.TextBox(text="Never Settle"),
                 widget.Clock(
-                    format='%m-%d %a %I:%M %p',
-                    padding=5),
+                    format="%m-%d %I:%M %p",
+                    padding=5
+                ),
             ],
             24,
-            opacity=0.70
+            opacity=1
         ),
     ),
 ]

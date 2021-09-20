@@ -23,6 +23,6 @@ power of python!
 |Volumeicon| Self-explanatory
 |Cbatticon| Battery Icon
 |Feh| For wallpapers
-|Redshift| take care of your eyes
+|Redshift| Take care of your eyes
 
 I promise am going to upgrade this readme and the file structure, soon I will post my DWM config!  
