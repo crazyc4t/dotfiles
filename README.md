@@ -1,13 +1,6 @@
-# The dotfiles of my window managers!
-![GitHub](https://img.shields.io/github/license/crazyc4t/dotfiles?color=brightgreen)
-![GitHub last commit](https://img.shields.io/github/last-commit/crazyc4t/dotfiles)
-## Qtile:
+# My dotfiles
 
-![Qtile screenshot!](screenshot.png "qtile conf")
-
-Based totally on utility and minimalism, not that much on the aesthetic,
-being at the same time lighting fast and easily configurable thanks to the
-power of python!
+Is a work in progress, the qtile dotfile is outdated, but I have added my first setup of neovim and my KDE setup files as well, I promise to document this repo in the future and come up with an awesome config file!
 
 ## The Software that I use
 
@@ -15,10 +8,10 @@ power of python!
 |---------|------------|
 |Alacritty| Lighting fast terminal emulator|
 |Thunar| File explorer|
-|Pulseaudio| Audio for the system|
-| Xorg| Display server|
+|Pipewire| Audio for the system|
+|Xorg| Display server|
 |Nvim| Best vim editor out there|
-|Atom| GUI text editor|
+|Visual Studio Code| GUI text editor|
 |VLC| Multimedia
 |Pavucontrol| Mixer for audio
 |Volumeicon| Self-explanatory
@@ -26,4 +19,3 @@ power of python!
 |Feh| For wallpapers
 |Redshift| Take care of your eyes
 
-I promise am going to upgrade this readme and the file structure, soon I will post my DWM config!  
