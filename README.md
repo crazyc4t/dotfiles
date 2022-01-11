@@ -2,6 +2,8 @@
 
 Is a work in progress, the qtile dotfile is outdated, but I have added my first setup of neovim and my KDE setup files as well, I promise to document this repo in the future and come up with an awesome config file!
 
+![KDE Desktop](kde.png)
+
 ## The Software that I use
 
 |  Name   | Description|
