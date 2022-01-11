@@ -1,3 +1,11 @@
+--░█▀▀░█▀▄░█▀█░▀▀█░█░█░█▀▀░█░█░▀█▀
+--░█░░░█▀▄░█▀█░▄▀░░░█░░█░░░░▀█░░█░
+--░▀▀▀░▀░▀░▀░▀░▀▀▀░░▀░░▀▀▀░░░▀░░▀░
+-----https://saidneder.tech-------
+---https://github.com/crazyc4t----
+--------- plugins.lua ------------
+
+
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'Mofiqul/dracula.nvim'
@@ -16,4 +24,5 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
+    use 'lervag/vimtex'
 end)

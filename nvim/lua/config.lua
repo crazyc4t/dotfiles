@@ -1,3 +1,12 @@
+--░█▀▀░█▀▄░█▀█░▀▀█░█░█░█▀▀░█░█░▀█▀
+--░█░░░█▀▄░█▀█░▄▀░░░█░░█░░░░▀█░░█░
+--░▀▀▀░▀░▀░▀░▀░▀▀▀░░▀░░▀▀▀░░░▀░░▀░
+-----https://saidneder.tech-------
+---https://github.com/crazyc4t----
+--------- config.lua ------------
+
+
+
 -- Configs
 -- Three types of configuration options
 -- 1. Global options (vim.o)

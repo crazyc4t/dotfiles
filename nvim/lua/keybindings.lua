@@ -1,4 +1,10 @@
--- Keybindings 
+--░█▀▀░█▀▄░█▀█░▀▀█░█░█░█▀▀░█░█░▀█▀
+--░█░░░█▀▄░█▀█░▄▀░░░█░░█░░░░▀█░░█░
+--░▀▀▀░▀░▀░▀░▀░▀▀▀░░▀░░▀▀▀░░░▀░░▀░
+-----https://saidneder.tech-------
+---https://github.com/crazyc4t----
+------- keybindings.lua ----------
+
 -- vim.api.nvim_set_keymap({[mode]}, {keymap}, {mapped to}, {options})
 local keymap = vim.api.nvim_set_keymap
 
