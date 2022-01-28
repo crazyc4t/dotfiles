@@ -1,3 +1,4 @@
+require 'config'
 return require('packer').startup(function()
     -- Package manager
     use 'wbthomason/packer.nvim'
@@ -31,11 +32,35 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'sharkdp/fd'
-    use 'L3MON4D3/LuaSnip'
     -- Git
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
     -- Auto Closing tabs
     use 'jiangmiao/auto-pairs'
     use 'machakann/vim-sandwich'
+    -- VimTex
+    use {
+      'lervag/vimtex',
+      opt = true,
+      config = texopts(),
+      ft = 'tex'
+    }
+    -- Status line
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    -- Snippets
+    use 'SirVer/ultisnips'
+    use 'honza/vim-snippets'
+    -- Markdown support
+    use { 'godlygeek/tabular' }
+    use { 'elzr/vim-json' }
+    use { 'plasticboy/vim-markdown' }
+    use {
+      'iamcco/markdown-preview.nvim',
+      run = 'cd app && yarn install',
+      cmd = 'MarkdownPreview'
+  }
+    use { 'vim-pandoc/vim-pandoc-syntax' }
 end)

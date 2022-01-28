@@ -1,9 +1,14 @@
 -- Keybindings
--- vim.api.nvim_set_keymap({[mode]}, {keymap}, {mapped to}, {options})
+-- keymap({[mode]}, {keymap}, {mapped to}, {options})
 local keymap = vim.api.nvim_set_keymap
 
 -- Options
 local opts = { noremap = true }
+
+-- Normal Mode Keymaps
+local function normap(key, map)
+  keymap('n', key, map, opts)
+end
 
 -- Call alpha
 keymap('n', '<c-a>', ':Alpha<CR>', opts)
@@ -44,19 +49,14 @@ keymap('v', '<Left>', '<Nop>', opts)
 keymap('v', '<Right>', '<Nop>', opts)
 
 -- LSP keymaps
-local function normap(key, map)
-  keymap('n', key, map, opts)
-end
+
 
 normap('gd', ':lua vim.lsp.buf.definition()<cr>')
-normap('gD', ':lua vim.lsp.buf.declaration()<cr>')
-normap('gi', ':lua vim.lsp.buf.implementation()<cr>')
 normap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
 normap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
 normap('gr', ':lua vim.lsp.buf.references()<cr>')
 normap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
 normap('K', ':lua vim.lsp.buf.hover()<cr>')
-normap('<c-k>', ':lua vim.lsp.buf.signature_help()<cr>')
 normap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 normap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 
@@ -65,3 +65,5 @@ normap('<leader>ff', ":lua require('telescope.builtin').find_files()<cr>")
 normap('<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>")
 normap('<leader>fb', ":lua require('telescope.builtin').buffers()<cr>")
 normap('<leader>fh', ":lua require('telescope.builtin').help_tags()<cr>")
+
+-- Completitions

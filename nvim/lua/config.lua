@@ -71,25 +71,25 @@ local cmp = require'cmp'
 
 cmp.setup({
   snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        require('luasnip').lsp_expand(args.body)
-      end,
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+    end,
     },
   mapping = {
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+  ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+  ['<C-e>'] = cmp.mapping({
+    i = cmp.mapping.abort(),
+    c = cmp.mapping.close(),
+  }),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   },
   sources = cmp.config.sources({
   { name = 'nvim_lsp' },
-  { name = 'luasnip' },
+  { name = 'ultisnips' }, -- For ultisnips users.
   }, {
     { name = 'buffer' },
     })
@@ -108,75 +108,46 @@ cmp.setup.cmdline(':', {
   { name = 'path' }
   }, {
     { name = 'cmdline' }
-    })
+  })
 })
 
 -- Setup lspconfig.
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['sumneko_lua'].setup {
   capabilities = capabilities
 }
-require('lspconfig')['zk'].setup {
+require('lspconfig')['jedi_language_server'].setup {
   capabilities = capabilities
 }
-require('lspconfig')['pylsp'].setup {
+require('lspconfig')['texlab'].setup {
   capabilities = capabilities
 }
-
 -- Snippets
-local function prequire(...)
-local status, lib = pcall(require, ...)
-if (status) then return lib end
-    return nil
+
+-- Status line
+require('lualine').setup()
+
+-- VimTex
+function texopts()
+    vim.g.vimtex_view_general_viewer = 'okular'
+    vim.g.vimtex_compiler_latexmk_engines = {
+        _ = '-xelatex'
+    }
+    vim.g.tex_comment_nospell = 1
+    vim.g.vimtex_compiler_progname = 'nvr'
+    vim.g.vimtex_view_general_options = [[--unique file:@pdf\#src:@line@tex]]
+    vim.g.vimtex_view_general_options_latexmk = '--unique'
 end
 
-local luasnip = prequire('luasnip')
-local cmp = prequire("cmp")
+-- UltiSnips
+vim.g.UltiSnipsExpandTrigger='<tab>'
+vim.g.UltiSnipsJumpForwardTrigger='<c-,>'
+vim.g.UltiSnipsJumpBackwardTrigger='<c-.>'
 
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
-
-_G.tab_complete = function()
-    if cmp and cmp.visible() then
-        cmp.select_next_item()
-    elseif luasnip and luasnip.expand_or_jumpable() then
-        return t("<Plug>luasnip-expand-or-jump")
-    elseif check_back_space() then
-        return t "<Tab>"
-    else
-        cmp.complete()
-    end
-    return ""
-end
-_G.s_tab_complete = function()
-    if cmp and cmp.visible() then
-        cmp.select_prev_item()
-    elseif luasnip and luasnip.jumpable(-1) then
-        return t("<Plug>luasnip-jump-prev")
-    else
-        return t "<S-Tab>"
-    end
-    return ""
-end
-
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<C-E>", "<Plug>luasnip-next-choice", {})
-vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
-
-require("luasnip.loaders.from_vscode").load()
-
-
+-- Markdown
+vim.g.vim_markdown_folding_disabled = 1
+vim.g.vim_markdown_math = 1
+vim.g.vim_markdown_conceal = 0
+vim.g.vim_markdown_json_frontmatter = 1
