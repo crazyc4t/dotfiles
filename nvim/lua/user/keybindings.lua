@@ -3,7 +3,7 @@
 local keymap = vim.api.nvim_set_keymap
 
 -- Options
-local opts = { noremap = true }
+local opts = { noremap = true, silent = true }
 
 -- Normal Mode Keymaps
 local function normap(key, map)
@@ -65,7 +65,6 @@ normap('<leader>fb', ":lua require('telescope.builtin').buffers()<cr>")
 normap('<leader>fh', ":lua require('telescope.builtin').help_tags()<cr>")
 
 -- Completitions
-vim.g.UltiSnipsExpandTrigger='<tab>'
 
 -- Nerd Tree
 normap('<c-b>', ':NvimTreeToggle<CR>')

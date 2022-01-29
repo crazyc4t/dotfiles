@@ -1,4 +1,4 @@
-require 'texopt'
+-- require 'texopt'
 return require('packer').startup(function()
     -- Package manager
     use 'wbthomason/packer.nvim'
@@ -23,10 +23,13 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'David-Kunz/cmp-npm'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+    use 'saadparwaiz1/cmp_luasnip'
     -- Telescope
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -42,7 +45,7 @@ return require('packer').startup(function()
     use {
       'lervag/vimtex',
       opt = true,
-      config = Texopts(),
+      -- config = Texopts(),
       ft = 'tex'
     }
     -- Status line
@@ -51,8 +54,8 @@ return require('packer').startup(function()
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     -- Snippets
-    use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
     -- Markdown support
     use { 'godlygeek/tabular' }
     use { 'plasticboy/vim-markdown' }

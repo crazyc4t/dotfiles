@@ -1,6 +1,10 @@
 -- Packages
-require 'plugins'
-require 'keybindings'
-require 'colors'
-require 'config'
-require 'cokeline'
+require "user.plugins"
+require "user.keybindings"
+require "user.colors"
+require "user.config"
+require "user.lsp"
+require "user.treesitter"
+require "user.texopts"
+require "user.filetree"
+require "user.completitions"

@@ -42,25 +42,14 @@ set.showcmd = true
 -- Follow indent
 set.breakindent = true
 
--- Treesitter
-require('treesitter')
-
--- LSP installer
-require('completitions')
-
 -- Status line
 require('lualine').setup()
-
--- VimTex
-require('texopt')
 
 -- Markdown
 vim.g.vim_markdown_folding_disabled = 1
 vim.g.vim_markdown_conceal = 0
 vim.g.vim_markdown_json_frontmatter = 1
 
--- File explorer
-require('filetree')
 
 -- Autocommands
 -- vim.cmd [[
