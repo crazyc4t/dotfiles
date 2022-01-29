@@ -1,4 +1,4 @@
-require 'config'
+require 'texopt'
 return require('packer').startup(function()
     -- Package manager
     use 'wbthomason/packer.nvim'
@@ -42,7 +42,7 @@ return require('packer').startup(function()
     use {
       'lervag/vimtex',
       opt = true,
-      config = texopts(),
+      config = Texopts(),
       ft = 'tex'
     }
     -- Status line
@@ -55,12 +55,34 @@ return require('packer').startup(function()
     use 'honza/vim-snippets'
     -- Markdown support
     use { 'godlygeek/tabular' }
-    use { 'elzr/vim-json' }
     use { 'plasticboy/vim-markdown' }
+    use { 'elzr/vim-json' }
+    use { 'vim-pandoc/vim-pandoc-syntax' }
     use {
       'iamcco/markdown-preview.nvim',
       run = 'cd app && yarn install',
       cmd = 'MarkdownPreview'
-  }
-    use { 'vim-pandoc/vim-pandoc-syntax' }
+    }
+    -- Vim wiki
+    use { 'vimwiki/vimwiki' }
+    -- File explorer
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      },
+      config = function() require'nvim-tree'.setup {} end
+    }
+    -- Buffer line
+    use({
+      'noib3/nvim-cokeline',
+      requires = 'kyazdani42/nvim-web-devicons',
+      config = function()
+        require('cokeline').setup()
+      end
+    })
+    -- Colorizer
+    use { 'norcalli/nvim-colorizer.lua' }
+    -- Code formatter
+    use { 'sbdchd/neoformat' }
 end)

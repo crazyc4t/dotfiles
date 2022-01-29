@@ -49,8 +49,6 @@ keymap('v', '<Left>', '<Nop>', opts)
 keymap('v', '<Right>', '<Nop>', opts)
 
 -- LSP keymaps
-
-
 normap('gd', ':lua vim.lsp.buf.definition()<cr>')
 normap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
 normap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
@@ -67,3 +65,15 @@ normap('<leader>fb', ":lua require('telescope.builtin').buffers()<cr>")
 normap('<leader>fh', ":lua require('telescope.builtin').help_tags()<cr>")
 
 -- Completitions
+vim.g.UltiSnipsExpandTrigger='<tab>'
+
+-- Nerd Tree
+normap('<c-b>', ':NvimTreeToggle<CR>')
+
+-- Packer Sync
+normap('P', ':PackerSync<CR>')
+
+-- Buffer navigation
+normap('>', ':bnext<CR>')
+normap('<', ':bprevious<CR>')
+
