@@ -1,9 +1,8 @@
 -- require 'texopt'
+require 'settings/vimtex'
 return require('packer').startup(function()
     -- Package manager
     use 'wbthomason/packer.nvim'
-    -- Theme
-    use 'Mofiqul/dracula.nvim'
     -- Greeter
     use {
     'goolord/alpha-nvim',
@@ -45,7 +44,7 @@ return require('packer').startup(function()
     use {
       'lervag/vimtex',
       opt = true,
-      -- config = Texopts(),
+      config = Texopts(),
       ft = 'tex'
     }
     -- Status line
@@ -86,6 +85,11 @@ return require('packer').startup(function()
     })
     -- Colorizer
     use { 'norcalli/nvim-colorizer.lua' }
-    -- Code formatter
-    use { 'sbdchd/neoformat' }
+    -- Onedark colorscheme
+    use 'joshdick/onedark.vim'
+    -- Emmet
+    use 'mattn/emmet-vim'
+    -- Terminal
+    use {"akinsho/toggleterm.nvim"}
+    -- Formater and linter
 end)

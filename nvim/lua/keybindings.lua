@@ -3,7 +3,7 @@
 local keymap = vim.api.nvim_set_keymap
 
 -- Options
-local opts = { noremap = true, silent = true }
+local opts = { noremap = false, silent = true }
 
 -- Normal Mode Keymaps
 local function normap(key, map)
@@ -21,7 +21,6 @@ keymap('i', '<c-s>', '<Esc>:w<CR>a', opts)
 keymap('n', '<c-q>', ':q<CR>', opts)
 
 -- Terminal
-keymap('n', '<c-t>', ':sp term://fish<CR>', opts)
 
 -- Navigate through splits
 keymap('n', '<c-j>', '<c-w>j', opts)
@@ -49,13 +48,6 @@ keymap('v', '<Left>', '<Nop>', opts)
 keymap('v', '<Right>', '<Nop>', opts)
 
 -- LSP keymaps
-normap('gd', ':lua vim.lsp.buf.definition()<cr>')
-normap('gw', ':lua vim.lsp.buf.document_symbol()<cr>')
-normap('gw', ':lua vim.lsp.buf.workspace_symbol()<cr>')
-normap('gr', ':lua vim.lsp.buf.references()<cr>')
-normap('gt', ':lua vim.lsp.buf.type_definition()<cr>')
-normap('K', ':lua vim.lsp.buf.hover()<cr>')
-normap('<leader>af', ':lua vim.lsp.buf.code_action()<cr>')
 normap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 
 -- Telescope
@@ -63,8 +55,6 @@ normap('<leader>ff', ":lua require('telescope.builtin').find_files()<cr>")
 normap('<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>")
 normap('<leader>fb', ":lua require('telescope.builtin').buffers()<cr>")
 normap('<leader>fh', ":lua require('telescope.builtin').help_tags()<cr>")
-
--- Completitions
 
 -- Nerd Tree
 normap('<c-b>', ':NvimTreeToggle<CR>')
@@ -75,4 +65,4 @@ normap('P', ':PackerSync<CR>')
 -- Buffer navigation
 normap('>', ':bnext<CR>')
 normap('<', ':bprevious<CR>')
-
+normap('<c-d>', ':bdelete<CR>')

@@ -3,5 +3,5 @@ if not status_ok then
 	return
 end
 
-require("lua.user.lsp.lsp-installer")
-require("lua.user.lsp.handlers").setup()
+require("lsp.lsp-installer")
+require("lsp.handlers").setup()
