@@ -1,4 +1,3 @@
--- require 'texopt'
 require 'settings/vimtex'
 return require('packer').startup(function()
     -- Package manager
@@ -85,8 +84,8 @@ return require('packer').startup(function()
     })
     -- Colorizer
     use { 'norcalli/nvim-colorizer.lua' }
-    -- Onedark colorscheme
-    use 'joshdick/onedark.vim'
+    -- Oceanic Next colorscheme
+    use 'connorholyday/vim-snazzy'
     -- Emmet
     use 'mattn/emmet-vim'
     -- Terminal

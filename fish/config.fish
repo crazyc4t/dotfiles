@@ -23,7 +23,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias sudo="doas"
 alias sudoedit="doas nvim"
-alias pac="paru"
-alias nodisturb="dunstctl set-paused toggle"
-# autostart commands 
+
+# Auto-start commands 
 pfetch
