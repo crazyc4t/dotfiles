@@ -5,9 +5,8 @@ return require('packer').startup(function()
     -- Greeter
     use {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.opts)
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
     end
 }
     -- Treesiter
@@ -60,10 +59,10 @@ return require('packer').startup(function()
     use { 'elzr/vim-json' }
     use { 'vim-pandoc/vim-pandoc-syntax' }
     use {
-      'iamcco/markdown-preview.nvim',
-      run = 'cd app && yarn install',
-      cmd = 'MarkdownPreview'
-    }
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
+    ft = {'markdown'}
+}
     -- Vim wiki
     use { 'vimwiki/vimwiki' }
     -- File explorer
@@ -85,10 +84,27 @@ return require('packer').startup(function()
     -- Colorizer
     use { 'norcalli/nvim-colorizer.lua' }
     -- Oceanic Next colorscheme
-    use 'connorholyday/vim-snazzy'
+    use 'mhartington/oceanic-next'
     -- Emmet
     use 'mattn/emmet-vim'
     -- Terminal
     use {"akinsho/toggleterm.nvim"}
-    -- Formater and linter
+    -- Arduino
+    use {'stevearc/vim-arduino'}
+    -- Trouble (error checking)
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("trouble").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+    -- Transparent neovim
+    use 'xiyaowong/nvim-transparent'
+    -- Golang
+    use 'ray-x/go.nvim'
 end)

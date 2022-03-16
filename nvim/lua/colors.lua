@@ -1,2 +1,2 @@
--- Colorscheme (onedark)
-vim.cmd[[colorscheme snazzy]]
+-- Colorscheme
+vim.cmd[[colorscheme OceanicNext]]
