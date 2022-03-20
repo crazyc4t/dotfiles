@@ -5,12 +5,11 @@
 #--https://github.com/crazyc4t--#
 #------ alacritty.yml ----------#
 
-background_opacity: 0.95
-
 window:
   padding:
     x: 5
     y: 5
+  opacity: 0.95
 
 font:
   normal:

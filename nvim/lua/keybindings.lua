@@ -20,8 +20,6 @@ keymap('i', '<c-s>', '<Esc>:w<CR>a', opts)
 -- Quit
 keymap('n', '<c-q>', ':q<CR>', opts)
 
--- Terminal
-
 -- Navigate through splits
 keymap('n', '<c-j>', '<c-w>j', opts)
 keymap('n', '<c-h>', '<c-w>h', opts)
@@ -30,22 +28,22 @@ keymap('n', '<c-l>', '<c-w>l', opts)
 
 -- No arrow keys
 -- Remove newbie crutches in Normal Mode
-keymap('n', '<Up>', '<Nop>', opts)
-keymap('n', '<Down>', '<Nop>', opts)
-keymap('n', '<Left>', '<Nop>', opts)
-keymap('n', '<Right>', '<Nop>', opts)
+-- keymap('n', '<Up>', '<Nop>', opts)
+-- keymap('n', '<Down>', '<Nop>', opts)
+-- keymap('n', '<Left>', '<Nop>', opts)
+-- keymap('n', '<Right>', '<Nop>', opts)
 
--- Remove newbie crutches in Insert Mode
-keymap('i', '<Up>', '<Nop>', opts)
-keymap('i', '<Down>', '<Nop>', opts)
-keymap('i', '<Left>', '<Nop>', opts)
-keymap('i', '<Right>', '<Nop>', opts)
+-- -- Remove newbie crutches in Insert Mode
+-- keymap('i', '<Up>', '<Nop>', opts)
+-- keymap('i', '<Down>', '<Nop>', opts)
+-- keymap('i', '<Left>', '<Nop>', opts)
+-- keymap('i', '<Right>', '<Nop>', opts)
 
--- Remove newbie crutches in Visual Mode
-keymap('v', '<Up>', '<Nop>', opts)
-keymap('v', '<Down>', '<Nop>', opts)
-keymap('v', '<Left>', '<Nop>', opts)
-keymap('v', '<Right>', '<Nop>', opts)
+-- -- Remove newbie crutches in Visual Mode
+-- keymap('v', '<Up>', '<Nop>', opts)
+-- keymap('v', '<Down>', '<Nop>', opts)
+-- keymap('v', '<Left>', '<Nop>', opts)
+-- keymap('v', '<Right>', '<Nop>', opts)
 
 -- LSP keymaps
 normap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
