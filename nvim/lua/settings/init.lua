@@ -8,3 +8,5 @@ require("settings.markdown")
 require("settings.terminal")
 require("settings.transparent")
 require("settings.colors")
+require("settings.cmp")
+

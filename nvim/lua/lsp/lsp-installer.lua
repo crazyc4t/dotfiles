@@ -16,11 +16,6 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
-  if server.name == "jedi-language-server" then
-    local jedi_opts = require("lsp.servers.jedi_py")
-    opts = vim.tbl_deep_extend("force", jedi_opts, opts)
-  end
-
   if server.name == "cssls" then
     local cssls_opts = require("lsp.servers.cssls")
     opts = vim.tbl_deep_extend("force", cssls_opts, opts)
@@ -31,20 +26,9 @@ lsp_installer.on_server_ready(function(server)
     opts = vim.tbl_deep_extend("force", html_opts, opts)
   end
 
-
-  if server.name == "quick_lint_js" then
-    local quicklintjs_opts = require("lsp.servers.quicklint_js")
-    opts = vim.tbl_deep_extend("force", quicklintjs_opts, opts)
-  end
-
   if server.name == "zk" then
       local zk_opts = require("lsp.servers.zk")
       opts = vim.tbl_deep_extend("force", zk_opts, opts)
-    end
-
-  if server.name == "texlab" then
-      local texlab_opts = require("lsp.servers.texlab")
-      opts = vim.tbl_deep_extend("force", texlab_opts, opts)
     end
 
   -- This setup() function is exactly the same as lspconfig's setup function.

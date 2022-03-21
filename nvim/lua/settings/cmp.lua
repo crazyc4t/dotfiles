@@ -111,7 +111,6 @@ cmp.setup {
   { name = "luasnip" },
   { name = "buffer" },
   { name = "path" },
-  { name = "npm" },
   { name = "nvim-lua" },
   { name = "cmdline" },
   { name = "nvim-lsp" }

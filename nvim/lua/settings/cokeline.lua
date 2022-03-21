@@ -25,10 +25,6 @@ require('cokeline').setup({
       style = function(buffer) return buffer.is_focused and 'bold' or nil end,
     },
     {
-      text = '',
-      delete_buffer_on_left_click = true,
-    },
-    {
       text = '  ',
     },
   },

@@ -17,9 +17,11 @@ return require('packer').startup(function()
     -- Closing tags
     use 'windwp/nvim-autopairs'
 
-    -- LSP & completitions
+    -- LSP
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
+
+    -- Completitions
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-path'
@@ -38,11 +40,9 @@ return require('packer').startup(function()
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
 
-    -- Auto Closing tabs
-    use 'machakann/vim-sandwich'
-
     -- VimTex
     use 'lervag/vimtex'
+
     -- Status line
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'

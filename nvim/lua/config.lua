@@ -1,6 +1,6 @@
 local set = vim.opt
-vim.cmd([[syntax on]])
-vim.cmd([[filetype plugin indent on]])
+vim.cmd[[syntax on]]
+vim.cmd[[filetype plugin indent on]]
 
 -- Don't know what are you doing just seek for help!
 -- :h expandtab
@@ -40,6 +40,7 @@ vim.cmd[[colorscheme dracula]]
 -- Setting some things up
 require('lualine').setup() -- Status line
 require('nvim-tree').setup() -- Sidebar file explorer
-require ('cokeline').setup() --  Buffer line
+require('cokeline').setup() --  Buffer line
 require('trouble').setup() -- Error linting
-require ('Comment').setup() -- Commenting shortcuts
+require('Comment').setup() -- Commenting shortcuts
+require('nvim-autopairs').setup()
