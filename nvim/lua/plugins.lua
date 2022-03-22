@@ -37,8 +37,8 @@ return require('packer').startup(function()
     use 'sharkdp/fd'
 
     -- Git
-    use 'airblade/vim-gitgutter'
-    use 'tpope/vim-fugitive'
+    use 'lewis6991/gitsigns.nvim'
+    use 'TimUntersberger/neogit'
 
     -- VimTex
     use 'lervag/vimtex'
@@ -64,7 +64,7 @@ return require('packer').startup(function()
     use 'norcalli/nvim-colorizer.lua'
 
     -- Colorscheme
-    use 'Mofiqul/dracula.nvim'
+    use 'monsonjeremy/onedark.nvim'
 
     -- Emmet
     use 'mattn/emmet-vim'

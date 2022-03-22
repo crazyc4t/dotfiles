@@ -8,7 +8,7 @@ configuration {
   modi: "window,run,drun";
 }
 
-@theme "/usr/share/rofi/themes/base16-onedark.rasi"
+@theme "/dev/null"
 
 * {
   bg: #11121D;

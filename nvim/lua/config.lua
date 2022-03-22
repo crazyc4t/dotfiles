@@ -1,6 +1,6 @@
 local set = vim.opt
-vim.cmd[[syntax on]]
-vim.cmd[[filetype plugin indent on]]
+vim.cmd([[syntax on]])
+vim.cmd([[filetype plugin indent on]])
 
 -- Don't know what are you doing just seek for help!
 -- :h expandtab
@@ -18,15 +18,15 @@ set.number = true
 
 -- Enable spell checking
 set.spell = true
-set.spelllang = 'en_us'
-set.encoding = 'utf-8'
+set.spelllang = "en_us"
+set.encoding = "utf-8"
 
 -- Splits orders
 set.splitbelow = true
 set.splitright = true
 
 -- Syntax highlighting
-set.syntax = 'on'
+set.syntax = "on"
 
 -- Show vim commands in the bottom line
 set.showcmd = true
@@ -35,12 +35,13 @@ set.showcmd = true
 set.breakindent = true
 
 -- Colorscheme
-vim.cmd[[colorscheme dracula]]
+require("onedark").setup()
 
 -- Setting some things up
-require('lualine').setup() -- Status line
-require('nvim-tree').setup() -- Sidebar file explorer
-require('cokeline').setup() --  Buffer line
-require('trouble').setup() -- Error linting
-require('Comment').setup() -- Commenting shortcuts
-require('nvim-autopairs').setup()
+require("lualine").setup() -- Status line
+require("nvim-tree").setup() -- Sidebar file explorer
+require("cokeline").setup() --  Buffer line
+require("trouble").setup() -- Error linting
+require("Comment").setup() -- Commenting shortcuts
+require("nvim-autopairs").setup() -- Auto closing tags
+require("neogit").setup() -- Git setup

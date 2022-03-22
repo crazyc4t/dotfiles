@@ -45,9 +45,6 @@ keymap('n', '<c-l>', '<c-w>l', opts)
 -- keymap('v', '<Left>', '<Nop>', opts)
 -- keymap('v', '<Right>', '<Nop>', opts)
 
--- LSP keymaps
-normap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
-
 -- Telescope
 normap('<leader>ff', ":lua require('telescope.builtin').find_files()<cr>")
 normap('<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>")
@@ -64,3 +61,6 @@ normap('P', ':PackerSync<CR>')
 normap('>', ':bnext<CR>')
 normap('<', ':bprevious<CR>')
 normap('<c-d>', ':bdelete<CR>')
+
+-- Diagnostics
+normap('<leader>tr', ':TroubleToggle<cr>')

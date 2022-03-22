@@ -3,21 +3,19 @@
 # - Refactoring of the code (checked)
 # - Modularization
 
-import os
 from libqtile import qtile
-from libqtile.config import Click, Drag, Group, KeyChord, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.command import lazy
-from libqtile import layout, bar, widget, hook
-from libqtile.lazy import lazy
+from libqtile import layout, bar, widget
 
 mod = "mod4"  # Supr key
 terminal = "alacritty"
 browser = "brave"
-font="hack nerd font"
+font = "hack nerd font"
 
 # nord colors
 colors = [
-    ["#282c34", "#282c34"],  # 0 
+    ["#282c34", "#282c34"],  # 0
     ["#353b45", "#353b45"],  # 1
     ["#3e4451", "#3e4451"],  # 2
     ["#545862", "#545862"],  # 3
@@ -34,7 +32,7 @@ colors = [
     ["#c678dd", "#c678dd"],  # 14
     ["#be5046", "#be5046"]   # 15
 ]
-    
+
 keys = [
 
     # ----------------------- QTILE WINDOW MANAGMENT ------------------------ #
@@ -114,7 +112,7 @@ keys = [
 
     # Redshift
     Key([mod], "e", lazy.spawn("redshift -O 4000k")),
-    Key([mod, "mod1"], "e", lazy.spawn("redshift -x")),
+    Key([mod, "shift"], "e", lazy.spawn("redshift -x")),
 
     # Discord
     Key([mod], "d", lazy.spawn("discord")),
@@ -328,18 +326,26 @@ screens = [
                 widget.TextBox(
                     text = "",
                     background = colors[11],
+                    foreground = colors[12],
+                    fontsize = 37,
+                    padding = -5,
+                ),
+
+                widget.Memory(
+                    foreground = colors[0],
+                    background = colors[12],
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                     fmt = 'Mem: {}',
+                    padding = 5
+                ),
+
+                widget.TextBox(
+                    text = "",
+                    background = colors[12],
                     foreground = colors[13],
                     fontsize = 37,
                     padding = -5,
                 ),
-           
-                # widget.Memory(
-                #     foreground = colors[0],
-                #     background = colors[11],
-                #     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
-                #     fmt = 'Mem: {}',
-                #     padding = 5
-                # ),
 
                 widget.Clock(
                     padding = 5,
@@ -364,7 +370,7 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front())
 ]
 
-dgroups_app_rules = []  # type: List
+dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False

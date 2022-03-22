@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/said/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dracula.nvim"] = {
-    loaded = true,
-    path = "/home/said/.local/share/nvim/site/pack/packer/start/dracula.nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -134,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/said/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/said/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -148,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  neogit = {
+    loaded = true,
+    path = "/home/said/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -204,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/said/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/said/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/monsonjeremy/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -238,16 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/vim-arduino",
     url = "https://github.com/stevearc/vim-arduino"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/said/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/said/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
   },
   vimtex = {
     loaded = true,

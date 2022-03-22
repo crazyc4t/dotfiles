@@ -9,4 +9,5 @@ require("settings.terminal")
 require("settings.transparent")
 require("settings.colors")
 require("settings.cmp")
+require("settings.nullls")
 

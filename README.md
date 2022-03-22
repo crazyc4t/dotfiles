@@ -1,21 +1,18 @@
 # My dotfiles
 
-Welcome to my dotfiles, these are my config files for desktop setup, being on two enviroments:
+Welcome to my dotfiles, these are my config files of my setup.
 
-- KDE (as my desktop enviroment)
 - Qtile (as my window manager)
 
-Currently am using Fedora KDE 35, and feel free to clone and fork if you want to!
+Currently am using arch linux, and feel free to clone and fork if you want to!
 
-## My Qtile setup
+# My Qtile setup
 This is my WM setup that I use, based currently on One-Dark colour scheme, using the phinger cursors.
 ![Qtile setup](archrice.png)
 
-## My KDE desktop
-This is my new KDE setup based on the Snazzy colour scheme and the Crown-Global theme, using as well the phinger cursors.
-![KDE Desktop](kde.png)
+I miss a lot of documentation so in this days I will try to document it! 
 
-## The Software that I use
+# The Software that I use
 
 | Name      | Description                     |
 |-----------|---------------------------------|
@@ -30,4 +27,5 @@ This is my new KDE setup based on the Snazzy colour scheme and the Crown-Global 
 | Nitrogen | For wallpapers         |
 | Redshift | Take care of your eyes |
 | Rofi     | Launch Menu            |
-
+                  
+My next WM will be awesome! (literally)

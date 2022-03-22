@@ -25,35 +25,40 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
+# onedark Alacritty Colors
 colors:
-
+  # Default colors
   primary:
-    background: '#282a36'
-    foreground: '#eff0eb'
+    background: '0x282c34'
+    foreground: '0xabb2bf'
 
-  cursor:
-    cursor: '#97979b'
-
+    # Selection colors
   selection:
-    text:       '#282a36'
-    background: '#feffff'
+    text:       CellForeground
+    background: '0x393f4a'
 
+    # Normal colors
   normal:
-    black:   '#282a36'
-    red:     '#ff5c57'
-    green:   '#5af78e'
-    yellow:  '#f3f99d'
-    blue:    '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan:    '#9aedfe'
-    white:   '#f1f1f0'
+    black:   '0x20232A'
+    red:     '0xe86671'
+    green:   '0x98c379'
+    yellow:  '0xe0af68'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x798294'
 
+    # Bright colors
   bright:
-    black:   '#686868'
-    red:     '#ff5c57'
-    green:   '#5af78e'
-    yellow:  '#f3f99d'
-    blue:    '#57c7ff'
-    magenta: '#ff6ac1'
-    cyan:    '#9aedfe'
-    white:   '#eff0eb'
+    black:   '0x21252b'
+    red:     '0xe86671'
+    green:   '0x98c379'
+    yellow:  '0xe0af68'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+  indexed_colors:
+    - { index: 16, color: '0xd19a66' }
+    - { index: 17, color: '0xf65866' }
