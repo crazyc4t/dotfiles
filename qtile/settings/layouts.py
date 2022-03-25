@@ -1,15 +1,17 @@
 from libqtile import layout
 from libqtile.config import Match
-from .theme import colors
+from .vars import *
 
-# Preferred Layouts = MonadTall | Matrix | Max (In order of usage)
+# Layout vars
 
 layout_conf = {
-    "border_focus": colors[12],
-    "border_normal": colors[1],
+    "border_focus": theme[12],
+    "border_normal": theme[1],
     "margin": 8,
     "border_width": 2,
 }
+
+# Preferred Layouts = MonadTall | Matrix | Max (In order of usage)
 
 layouts = [
     layout.MonadTall(**layout_conf),
