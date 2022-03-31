@@ -1,5 +1,0 @@
-terminal = "alacritty"
-editor = "nvim"
-editor_cmd = "alacritty -e nvim"
-modkey = "Mod1"
-browser = "brave"

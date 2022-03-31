@@ -24,5 +24,6 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.gofmt,
 		formatting.latexindent,
+		formatting.remark,
 	},
 })

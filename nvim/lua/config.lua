@@ -44,4 +44,4 @@ require("cokeline").setup() --  Buffer line
 require("trouble").setup() -- Error linting
 require("Comment").setup() -- Commenting shortcuts
 require("nvim-autopairs").setup() -- Auto closing tags
-require("neogit").setup() -- Git setup
+require("gitsigns").setup() -- Git signs
