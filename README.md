@@ -167,7 +167,7 @@ First let's install the drivers required for running games:
 - Nvidia
   - `sudo pacman -S --needed nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader`
 - Intel
-  `sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader`
+  - `sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader`
 
 ### Installing wine
 This is a big list of packages but you will need them to make the games work properly.
@@ -225,4 +225,3 @@ So this is the way I work with my setup! hope you like it and it was useful!
 | Git             | Version control                                |
 | Starship        | Prompt for my shell                            |
 | Papirus         | Icons                                          |
-
