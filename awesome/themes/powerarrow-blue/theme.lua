@@ -7,11 +7,12 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-blue"
-theme.font = "Hack Nerd Font 9"
-theme.taglist_font = "Hack Nerd Font 9"
+theme.font = "Hack Nerd Font 10"
+theme.taglist_font = "Hack Nerd Font 10"
 theme.fg_normal = "#ffffff"
+theme.widget_fg = "#282a36"
 theme.fg_focus = "#61afef"
-theme.fg_urgent = "#b74822"
+theme.fg_urgent = "#61afef"
 theme.bg_normal = "#282a36"
 theme.bg_focus = "#282a36"
 theme.bg_urgent = "#282a36"
@@ -68,7 +69,7 @@ theme.widget_task = theme.dir .. "/icons/task.png"
 theme.widget_scissors = theme.dir .. "/icons/scissors.png"
 theme.widget_weather = theme.dir .. "/icons/dish.png"
 theme.tasklist_plain_task_name = true
-theme.tasklist_disable_icon = true
+theme.tasklist_disable_icon = false
 theme.useless_gap = 4
 theme.titlebar_close_button_focus = theme.dir .. "/icons/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = theme.dir .. "/icons/titlebar/close_normal.png"
@@ -106,12 +107,6 @@ theme.cal = lain.widget.cal({
 		fg = theme.fg_normal,
 		bg = theme.bg_normal,
 	},
-})
-
--- ALSA volume
-theme.volume = lain.widget.alsabar({
-	--togglechannel = "IEC958,3",
-	notification_preset = { font = theme.font, fg = theme.fg_normal },
 })
 
 -- MEM
@@ -213,18 +208,9 @@ function theme.at_screen_connect(s)
 	-- s.quake = lain.util.quake({ app = awful.util.terminal })
 	s.quake = lain.util.quake({ app = "alacritty", height = 0.50, argname = "--name %s" })
 
-	-- If wallpaper is a function, call it with the screen
-	local wallpaper = theme.wallpaper
-	if type(wallpaper) == "function" then
-		wallpaper = wallpaper(s)
-	end
-	gears.wallpaper.maximized(wallpaper, s, true)
-
 	-- All tags open with layout 1
 	awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
 
-	-- Create a promptbox for each screen
-	s.mypromptbox = awful.widget.prompt()
 	-- Create an imagebox widget which will contains an icon indicating which layout we're using.
 	-- We need one layoutbox per screen.
 	s.mylayoutbox = awful.widget.layoutbox(s)
@@ -285,21 +271,12 @@ function theme.at_screen_connect(s)
 				),
 				"#e06c75"
 			),
-			arrow("#e06c75", "#e5c07b"),
+			arrow("#e06c75", "#c679dd"),
 			wibox.container.background(
 				wibox.container.margin(
 					wibox.widget({ memicon, mem.widget, layout = wibox.layout.align.horizontal }),
 					2,
 					3
-				),
-				"#e5c07b"
-			),
-			arrow("#e5c07b", "#c679dd"),
-			wibox.container.background(
-				wibox.container.margin(
-					wibox.widget({ cpuicon, cpu.widget, layout = wibox.layout.align.horizontal }),
-					3,
-					4
 				),
 				"#c679dd"
 			),

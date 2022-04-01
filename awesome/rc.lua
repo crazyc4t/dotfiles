@@ -16,7 +16,6 @@ local naughty = require("naughty")
 naughty.config.defaults["icon_size"] = 100
 
 local lain = require("lain")
-local freedesktop = require("freedesktop")
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 if awesome.startup_errors then
