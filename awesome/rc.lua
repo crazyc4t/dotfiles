@@ -466,44 +466,6 @@ awful.rules.rules = {
 	-- Titlebars
 	{ rule_any = { type = { "dialog", "normal" } }, properties = { titlebars_enabled = false } },
 
-	-- Set applications to always map on the tag 1 on screen 1.
-	-- find class or role via xprop command
-	--{ rule = { class = browser1 },
-	--properties = { screen = 1, tag = awful.util.tagnames[1] } },
-
-	--{ rule = { class = editorgui },
-	--properties = { screen = 1, tag = awful.util.tagnames[2] } },
-
-	--{ rule = { class = "Geany" },
-	--properties = { screen = 1, tag = awful.util.tagnames[2] } },
-
-	-- Set applications to always map on the tag 3 on screen 1.
-	--{ rule = { class = "Inkscape" },
-	--properties = { screen = 1, tag = awful.util.tagnames[3] } },
-
-	-- Set applications to always map on the tag 4 on screen 1.
-	--{ rule = { class = "Gimp" },
-	--properties = { screen = 1, tag = awful.util.tagnames[4] } },
-
-	-- Set applications to be maximized at startup.
-	-- find class or role via xprop command
-
-	-- { rule = { class = editorgui }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "Gimp*", role = "gimp-image-window" }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "inkscape" }, properties = { maximized = true } },
-	--
-	-- { rule = { class = mediaplayer }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "Vlc" }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "VirtualBox Manager" }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "VirtualBox Machine" }, properties = { maximized = true } },
-	--
-	-- { rule = { class = "Xfce4-settings-manager" }, properties = { floating = false } },
-	--
 	-- Floating clients.
 	{
 		rule_any = {
@@ -626,5 +588,16 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 
+-- Autostart
+
+-- Wallpaper
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
+
+-- Compositor
+awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf &")
+
+-- Notifications
+awful.spawn.with_shell("dunst &")
+
+-- Authorization agent
+awful.spawn.with_shell("lxpolkit &")
