@@ -17,11 +17,6 @@ naughty.config.defaults["icon_size"] = 100
 
 local lain = require("lain")
 local freedesktop = require("freedesktop")
-
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
-local hotkeys_popup = require("awful.hotkeys_popup").widget
-require("awful.hotkeys_popup.keys")
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 if awesome.startup_errors then
@@ -51,22 +46,7 @@ do
 	end)
 end
 
-local function run_once(cmd_arr)
-	for _, cmd in ipairs(cmd_arr) do
-		awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
-	end
-end
-
-run_once({ "unclutter -root" }) -- entries must be comma-separated
-
-local themes = {
-	"powerarrow-blue", -- 1
-	"powerarrow", -- 2
-	"multicolor", -- 3
-}
-
--- choose your theme here
-local chosen_theme = themes[1]
+local chosen_theme = "powerarrow-blue"
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -83,7 +63,6 @@ local terminal = "alacritty"
 
 -- awesome variables
 awful.util.terminal = terminal
---awful.util.tagnames = {  " ", " ", " ", " ", " ", " ", " ", " ", " ", " "  }
 awful.util.tagnames = { "www", "term", "code", "file", "spot", "cord", "virt", "game", "zoom" }
 awful.layout.suit.tile.left.mirror = true
 awful.layout.layouts = {
@@ -174,8 +153,6 @@ lain.layout.cascade.tile.ncol = 2
 
 beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/themes/%s/theme.lua", chosen_theme))
 
--- menubar.utils.terminal = terminal -- Set the Menubar terminal for applications that require it
-
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", function(s)
 	-- Wallpaper
@@ -264,6 +241,11 @@ globalkeys = my_table.join(
 		awful.spawn("rofi -show")
 	end),
 
+	-- Screenshot
+	awful.key({}, "Print", function()
+		awful.spawn("gscreenshot")
+	end),
+
 	-- Keyboard Layouts
 	awful.key({ modkey }, "x", function()
 		awful.spawn("setxkbmap us")
@@ -317,6 +299,10 @@ globalkeys = my_table.join(
 		awful.spawn(filemanager)
 	end),
 
+	-- Neovim
+	awful.key({ modkey }, "n", function()
+		awful.spawn(editor)
+	end),
 	-- Lock Screen
 	awful.key({ modkey, altkey }, "l", function()
 		awful.spawn(scrlocker)
