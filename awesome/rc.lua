@@ -587,17 +587,3 @@ client.connect_signal("property::maximized", border_adjust)
 client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
-
--- Autostart
-
--- Wallpaper
-awful.spawn.with_shell("nitrogen --restore")
-
--- Compositor
-awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf &")
-
--- Notifications
-awful.spawn.with_shell("dunst &")
-
--- Authorization agent
-awful.spawn.with_shell("lxpolkit &")

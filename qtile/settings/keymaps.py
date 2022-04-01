@@ -59,7 +59,7 @@ keys = [
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
     # Screenshot
-    Key([], "Print", lazy.spawn("xfce4-screenshooter")),
+    Key([], "Print", lazy.spawn("gscreenshot")),
     # Web browser
     Key([mod], "b", lazy.spawn(browser)),
     # Keyboard Layouts

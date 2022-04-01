@@ -11,9 +11,9 @@ groups = [
     Group("file", layout="monadtall"),
     Group("spot", layout="monadtall"),
     Group("cord", layout="monadtall"),
-    Group("vbox", layout="monadtall"),
-    Group("zoom", layout="monadtall"),
+    Group("virt", layout="monadtall"),
     Group("game", layout="monadtall"),
+    Group("zoom", layout="monadtall"),
 ]
 
 

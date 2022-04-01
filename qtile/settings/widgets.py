@@ -153,7 +153,7 @@ screens = [
                 ),
                 widget.Clock(
                     padding=5,
-                    format="%A, %B %d - %H:%M ",
+                    format="%d/%m/%y - %H:%M ",
                     background=theme[13],
                     foreground=theme[0],
                 ),
