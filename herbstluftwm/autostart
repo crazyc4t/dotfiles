@@ -1,13 +1,4 @@
 #!/usr/bin/env bash
-#  ____ _____ 
-# |  _ \_   _|  Derek Taylor (DistroTube)
-# | | | || |  	http://www.youtube.com/c/DistroTube
-# | |_| || |  	http://www.gitlab.com/dwt1/ 
-# |____/ |_|  	
-#        
-# A customized configuration for herbstluftwm (http://www.herbstluftwm.org)     
-# Modified by Derek Taylor (http://www.gitlab.com/dwt1/ )
-
 
 hc() {
     herbstclient "$@"
@@ -181,4 +172,3 @@ for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     # start it on each monitor
     "$panel" $monitor &
 done
-

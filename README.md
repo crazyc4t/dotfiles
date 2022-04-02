@@ -25,9 +25,10 @@ Am using [Arch Linux](https://archlinux.org/) btw, and my configurations are bas
 Here is some screenshots of my available window managers, yet there's some more to configure
 - [x] [Qtile](http://www.qtile.org/)
 - [x] [Awesome](https://awesomewm.org/)
-- [] [Xmonad](https://xmonad.org/)
-- [] [Dwm](https://dwm.suckless.org/)
 - [x] [Herbsluftwm](https://herbstluftwm.org/)
+- [x] [LeftWM](http://leftwm.org/)
+- [ ] [Xmonad](https://xmonad.org/)
+- [ ] [Dwm](https://dwm.suckless.org/)
 
 ## Qtile
 ![Qtile setup](qtile.png)
@@ -37,6 +38,9 @@ Here is some screenshots of my available window managers, yet there's some more 
 
 ## Herbsluftwm
 ![Herbsluftwm setup](herbstluftwm.png)
+
+## LeftWM
+![LeftWM setup](leftwm.png)
 
 ## How to install Arch Linux
 
