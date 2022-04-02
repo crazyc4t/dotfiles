@@ -6,6 +6,8 @@
 - **Window Managers**
   - [Qtile](https://github.com/crazyc4t/dotfiles/tree/main/qtile)
   - [Awesome](https://github.com/crazyc4t/dotfiles/tree/main/awesome)
+  - [Herbstluftwm](https://github.com/crazyc4t/dotfiles/tree/main/herbstluftwm)
+  - [Leftwm](https://github.com/crazyc4t/dotfiles/tree/main/leftwm)
 - **Terminal Related**
   - [Alacritty](https://github.com/crazyc4t/dotfiles/blob/main/alacritty)
   - [Bat](https://github.com/crazyc4t/dotfiles/tree/main/bat)
@@ -25,7 +27,7 @@ Am using [Arch Linux](https://archlinux.org/) btw, and my configurations are bas
 Here is some screenshots of my available window managers, yet there's some more to configure
 - [x] [Qtile](http://www.qtile.org/)
 - [x] [Awesome](https://awesomewm.org/)
-- [x] [Herbsluftwm](https://herbstluftwm.org/)
+- [x] [Herbstluftwm](https://herbstluftwm.org/)
 - [x] [LeftWM](http://leftwm.org/)
 - [ ] [Xmonad](https://xmonad.org/)
 - [ ] [Dwm](https://dwm.suckless.org/)
@@ -37,7 +39,7 @@ Here is some screenshots of my available window managers, yet there's some more 
 ![Awesome setup](awesome.png)
 
 ## Herbsluftwm
-![Herbsluftwm setup](herbstluftwm.png)
+![Herbstluftwm setup](herbstluftwm.png)
 
 ## LeftWM
 ![LeftWM setup](leftwm.png)
