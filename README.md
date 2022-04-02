@@ -27,13 +27,16 @@ Here is some screenshots of my available window managers, yet there's some more 
 - [x] [Awesome](https://awesomewm.org/)
 - [] [Xmonad](https://xmonad.org/)
 - [] [Dwm](https://dwm.suckless.org/)
-- [] [Herbsluftwm](https://herbstluftwm.org/)
+- [x] [Herbsluftwm](https://herbstluftwm.org/)
 
 ## Qtile
 ![Qtile setup](qtile.png)
 
 ## Awesome
 ![Awesome setup](awesome.png)
+
+## Herbsluftwm
+![Herbsluftwm setup](herbstluftwm.png)
 
 ## How to install Arch Linux
 
@@ -73,6 +76,9 @@ We are going to use the [Aether](https://github.com/NoiSek/Aether) theme made by
 
 And then enable the display manager:
 `sudo systemctl enable lightdm.service`
+
+Note: I no longer use the Aether theme, am using the [Osmos](https://github.com/Warinyourself/lightdm-webkit-theme-osmos) theme that supports tons of window managers, you can install it by doing:
+`yay -S lightdm-webkit-theme-osmos`
 
 ## Installing a Window manager
 You can install any type of window manager, but for me is essential to have qtile, so that is what am going to do:
