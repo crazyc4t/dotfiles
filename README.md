@@ -4,7 +4,7 @@
 
 # Contents
 - **Desktop Enviroment**
-  - [Cinnamon]
+  - [Cinnamon](https://github.com/crazyc4t/dotfiles/blob/main/cinnamon.png)
 - **Window Managers**
   - [Qtile](https://github.com/crazyc4t/dotfiles/tree/main/qtile)
   - [Awesome](https://github.com/crazyc4t/dotfiles/tree/main/awesome)
