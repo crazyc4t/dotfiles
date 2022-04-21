@@ -3,6 +3,8 @@
 ![Qtile setup](qtile.png)
 
 # Contents
+- **Desktop Enviroment**
+  - [Cinnamon]
 - **Window Managers**
   - [Qtile](https://github.com/crazyc4t/dotfiles/tree/main/qtile)
   - [Awesome](https://github.com/crazyc4t/dotfiles/tree/main/awesome)
@@ -22,6 +24,11 @@
 This documentation is about my laptop configuration that I use day to day to code, write LaTeX documents and game with lutris and steam and how to set it up.
 
 Am using [Arch Linux](https://archlinux.org/) btw, and my configurations are based on command line interfaces and window managers, you are free to fork, copy or use the code as however you want!
+
+# My desktop enviroment
+I have now changed my workflow, and I have added a desktop enviroment to my setup, being [cinnamon](https://wiki.archlinux.org/title/Cinnamon) that is a DE based on Gnome 2.0, and is really beautiful, friendly to use, low on resources, and not bloated at all!
+
+![Cinnamon setup](cinnamon.png)
 
 # My window managers
 Here is some screenshots of my available window managers, yet there's some more to configure
@@ -57,46 +64,72 @@ pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git
 
 ## Using doas instead of sudo
 Am using [doas](https://wiki.archlinux.org/title/Doas) on my system because sudo is an overkill for my requirements, install doas by:
+
 `sudo pacman -S opendoas`
 
 Then create a `doas.conf` on the `etc` folder and permit your username for privilege escalation and persistence:
+
 `permit persist said as root`
 
 Then transition to it by adding an alias to your shell:
+
 `alias sudo='doas'`
 
 And finally remove sudo and replace it with doas:
+
 `doas pacman -R sudo`
+
 Then as root (you can do so by doing `doas -s`):
+
 `ln -s $(which doas) /usr/bin/sudo`
+
+## Installing Xorg
+Installing xorg is really simple, just do:
+
+`doas pacman -S xorg`
+
+And you are ready!
 
 ## Install some basic utilities
 This can change depending of your preferences, but a browser, a code editor, git and a terminal are required
+
 `yay -S brave alacritty neovim git`
 
 ## Using a Display manager 
 If you followed the Arch Linux installation guide made by LearnLinuxTV, you should be on a tty, with xorg installed, but no desktop enviroment, so before installing any type of window manager, we should install first the display manager so we can log into different window managers.
 
 We are going to use the [Aether](https://github.com/NoiSek/Aether) theme made by NoiSek (great theme thanks!) and is as easy by doing:
+
 `yay -S lightdm-webkit-theme-aether`
 
 And then enable the display manager:
+
 `sudo systemctl enable lightdm.service`
 
 Note: I no longer use the Aether theme, am using the [Osmos](https://github.com/Warinyourself/lightdm-webkit-theme-osmos) theme that supports tons of window managers, you can install it by doing:
+
 `yay -S lightdm-webkit-theme-osmos`
 
-## Installing a Window manager
+## Installing your desktop!
+My desktop setup is made by cinnamon and qtile, let's install cinnamon first:
+`yay -S xed pix xreader metacity gnome-shell cinnamon papirus-icon-theme phinger-cursors blueberry`
+
+For customizing the desktop you can follow this [guide](https://odysee.com/@EF-TechMadeSimple:3/5-cinnamon-customization:e)
+### Window managers
 You can install any type of window manager, but for me is essential to have qtile, so that is what am going to do:
+
 `doas pacman -S qtile python-pip`
 
 After that install some dependencies with pip:
+
 `pip install psutil`
 
 And now clone this repo by doing so:
-`git clone git@github.com:crazyc4t/dotfiles.git`
+
+`git clone https://github.com/crazyc4t/dotfiles.git`
 
 Then, move the qtile folder to your ~/.config/ folder:
+
 `cd dotfiles && mv qtile/ ~/.config/`
 
 Then finally reboot and enjoy Qtile!
@@ -155,9 +188,17 @@ And then sync it all and enjoy!
 
 ## Fonts
 Install these fonts for compatibility:
-`yay -S gnu-free-fonts noto-fonts nerd-fonts-complete ttf-ms-win10-auto noto-fonts-emoji`
+`yay -S gnu-free-fonts noto-fonts ttf-ms-win10-auto noto-fonts-emoji`
 
-Note: Nerd fonts complete package is optional since I like trying different nerd fonts I have installed it, but if that's not your case you are free to omit it.
+### Nerd fonts 
+Am going to install all nerd fonts for preference, since I like having all of them at my disposal, to install it we need to follow certain steps made by the AUR [maintainer](https://aur.archlinux.org/packages/nerd-fonts-complete):
+
+```
+yay --getpkgbuild nerd-fonts-complete (or git clone https://aur.archlinux.org/nerd-fonts-complete.git)
+cd nerd-fonts-complete
+wget -O nerd-fonts-2.1.0.tar.gz https://github.com/ryanoasis/nerd-fonts/archive/v2.1.0.tar.gz
+makepkg -sci BUILDDIR=.
+```
 
 ## Gaming
 With the proton project developed by valve, playing on Linux is easier as ever! Prepare yourself to install a ton of packages...
