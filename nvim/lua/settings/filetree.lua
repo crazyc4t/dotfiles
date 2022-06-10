@@ -1,5 +1,5 @@
 local nvim_tree = require 'nvim-tree'
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+local tree_cb = require 'nvim-tree.config'.nvim_tree_callback
 
 nvim_tree.setup {
   disable_netrw       = true,
@@ -10,7 +10,6 @@ nvim_tree.setup {
     'dashboard',
     'startify'
   },
-  auto_close          = true,
   open_on_tab         = true,
   hijack_cursor       = false,
   update_cwd          = true,
@@ -18,7 +17,7 @@ nvim_tree.setup {
     enable = true,
     auto_open = true,
   },
-  diagnostics = {
+  diagnostics         = {
     enable = true,
     icons = {
       hint = "",
@@ -32,12 +31,12 @@ nvim_tree.setup {
     update_cwd  = true,
     ignore_list = {}
   },
-  git = {
+  git                 = {
     enable = true,
     ignore = true,
     timeout = 500,
   },
-  view = {
+  view                = {
     width = 30,
     height = 30,
     hide_root_folder = false,
@@ -46,14 +45,14 @@ nvim_tree.setup {
     mappings = {
       custom_only = false,
       list = {
-        {key = 'v', cb = tree_cb 'vsplit'},
+        { key = 'v', cb = tree_cb 'vsplit' },
       }
     },
     number = false,
     relativenumber = false,
     signcolumn = "yes"
   },
-  trash = {
+  trash               = {
     cmd = "trash",
     require_confirm = true
   }

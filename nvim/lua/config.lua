@@ -39,7 +39,6 @@ require("onedark").setup()
 
 -- Setting some things up
 require("lualine").setup() -- Status line
-require("nvim-tree").setup() -- Sidebar file explorer
 require("cokeline").setup() --  Buffer line
 require("trouble").setup() -- Error linting
 require("Comment").setup() -- Commenting shortcuts

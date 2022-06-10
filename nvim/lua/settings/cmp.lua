@@ -77,9 +77,9 @@ cmp.setup {
         fallback()
       end
     end, {
-        "i",
-        "s",
-      }),
+      "i",
+      "s",
+    }),
     ["<c-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -89,9 +89,9 @@ cmp.setup {
         fallback()
       end
     end, {
-        "i",
-        "s",
-      }),
+      "i",
+      "s",
+    }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -108,19 +108,16 @@ cmp.setup {
     end,
   },
   sources = {
-  { name = "nvim_lsp" },
-  { name = "nvim_lua" },
-  { name = "luasnip" },
-  { name = "buffer" },
-  { name = "path" },
-  { name = "cmdline" },
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "cmdline" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
-  },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
     ghost_text = false,
@@ -131,4 +128,3 @@ cmp.setup {
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
