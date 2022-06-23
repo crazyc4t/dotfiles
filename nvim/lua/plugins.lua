@@ -90,4 +90,35 @@ return require("packer").startup(function()
 
 	-- Discord presence
 	use("andweeb/presence.nvim")
+
+	-- Code navigation
+	use({
+		"stevearc/aerial.nvim",
+		config = function()
+			require("aerial").setup()
+		end,
+	})
+	-- Hover
+	use({
+		"lewis6991/hover.nvim",
+		config = function()
+			require("hover").setup({
+				init = function()
+					-- Require providers
+					require("hover.providers.lsp")
+					require("hover.providers.gh")
+					require("hover.providers.man")
+					-- require('hover.providers.dictionary')
+				end,
+				preview_opts = {
+					border = nil,
+				},
+				title = true,
+			})
+
+			-- Setup keymaps
+			vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+		end,
+	})
 end)

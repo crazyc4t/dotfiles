@@ -33,14 +33,3 @@ set.showcmd = true
 
 -- Follow indent
 set.breakindent = true
-
--- Colorscheme
-require("onedark").setup()
-
--- Setting some things up
-require("lualine").setup() -- Status line
-require("cokeline").setup() --  Buffer line
-require("trouble").setup() -- Error linting
-require("Comment").setup() -- Commenting shortcuts
-require("nvim-autopairs").setup() -- Auto closing tags
-require("gitsigns").setup() -- Git signs

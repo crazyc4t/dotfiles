@@ -7,24 +7,24 @@ local opts = { noremap = false, silent = true }
 
 -- Normal Mode Keymaps
 local function normap(key, map)
-  keymap('n', key, map, opts)
+	keymap("n", key, map, opts)
 end
 
 -- Call alpha
-keymap('n', '<c-a>', ':Alpha<CR>', opts)
+keymap("n", "<c-a>", ":Alpha<CR>", opts)
 
 -- Save with ctrl+s
-keymap('n', '<c-s>', ':w<CR>', opts)
-keymap('i', '<c-s>', '<Esc>:w<CR>a', opts)
+keymap("n", "<c-s>", ":w<CR>", opts)
+keymap("i", "<c-s>", "<Esc>:w<CR>a", opts)
 
 -- Quit
-keymap('n', '<c-q>', ':q<CR>', opts)
+keymap("n", "<c-q>", ":q<CR>", opts)
 
 -- Navigate through splits
-keymap('n', '<c-j>', '<c-w>j', opts)
-keymap('n', '<c-h>', '<c-w>h', opts)
-keymap('n', '<c-k>', '<c-w>k', opts)
-keymap('n', '<c-l>', '<c-w>l', opts)
+keymap("n", "<c-j>", "<c-w>j", opts)
+keymap("n", "<c-h>", "<c-w>h", opts)
+keymap("n", "<c-k>", "<c-w>k", opts)
+keymap("n", "<c-l>", "<c-w>l", opts)
 
 -- No arrow keys
 -- Remove newbie crutches in Normal Mode
@@ -46,21 +46,24 @@ keymap('n', '<c-l>', '<c-w>l', opts)
 -- keymap('v', '<Right>', '<Nop>', opts)
 
 -- Telescope
-normap('<leader>ff', ":lua require('telescope.builtin').find_files()<cr>")
-normap('<leader>fg', ":lua require('telescope.builtin').live_grep()<cr>")
-normap('<leader>fb', ":lua require('telescope.builtin').buffers()<cr>")
-normap('<leader>fh', ":lua require('telescope.builtin').help_tags()<cr>")
+normap("<leader>ff", ":lua require('telescope.builtin').find_files()<cr>")
+normap("<leader>fg", ":lua require('telescope.builtin').live_grep()<cr>")
+normap("<leader>fb", ":lua require('telescope.builtin').buffers()<cr>")
+normap("<leader>fh", ":lua require('telescope.builtin').help_tags()<cr>")
 
 -- Nerd Tree
-normap('<c-b>', ':NvimTreeToggle<CR>')
+normap("<c-b>", ":NvimTreeToggle<CR>")
 
 -- Packer Sync
-normap('P', ':PackerSync<CR>')
+normap("P", ":PackerSync<CR>")
 
 -- Buffer navigation
-normap('>', ':bnext<CR>')
-normap('<', ':bprevious<CR>')
-normap('<c-d>', ':bdelete<CR>')
+normap(">", ":bnext<CR>")
+normap("<", ":bprevious<CR>")
+normap("<c-d>", ":bdelete<CR>")
 
 -- Diagnostics
-normap('<leader>tr', ':TroubleToggle<cr>')
+normap("<leader>tr", ":TroubleToggle<cr>")
+
+-- Aerial
+normap("<leader>a", ":AerialToggle<cr>")
