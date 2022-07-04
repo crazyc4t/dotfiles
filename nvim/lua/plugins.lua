@@ -62,7 +62,7 @@ return require("packer").startup(function()
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Colorscheme
-	use("monsonjeremy/onedark.nvim")
+	use("folke/tokyonight.nvim")
 
 	-- Emmet
 	use("mattn/emmet-vim")
@@ -76,11 +76,11 @@ return require("packer").startup(function()
 	-- Trouble (error checking)
 	use("folke/trouble.nvim")
 
-	-- Transparent neovim
-	use("xiyaowong/nvim-transparent")
-
 	-- Faster startup time
 	use("lewis6991/impatient.nvim")
+
+	-- Spellsitter
+	use("lewis6991/spellsitter.nvim")
 
 	-- LSP colors
 	use("folke/lsp-colors.nvim")

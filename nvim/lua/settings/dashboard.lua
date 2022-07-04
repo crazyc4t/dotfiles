@@ -27,7 +27,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("p", "爵 > Web Page", ":e ~/Coding/blog/config.yaml | :cd %:p:h | split . | wincmd k | pwd<CR>"),
 }
 
-dashboard.section.footer.val = "On my way."
+dashboard.section.footer.val = "On my way to success"
 -- Send config to alpha
 alpha.setup(dashboard.opts)
 

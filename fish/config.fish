@@ -16,13 +16,12 @@ set -g fish_greeting
 # Starship prompt
 starship init fish | source
 
-alias ls="lsd -lra"
+alias ls="lsd"
 alias cat="bat"
 alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
-alias sudo="doas"
-alias sudoedit="doas nvim"
+alias zyp="sudo zypper"
 
 # Auto-start commands 
-pfetch
+PF_INFO="ascii title os host kernel shell editor de palette" /usr/bin/pfetch
