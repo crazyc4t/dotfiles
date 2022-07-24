@@ -22,6 +22,8 @@ alias nv="nvim"
 alias vi="nvim"
 alias vim="nvim"
 alias zyp="sudo zypper"
+alias pip="pip3.10"
+alias python="python3"
 
 # Auto-start commands 
 PF_INFO="ascii title os host kernel shell editor de palette" /usr/bin/pfetch

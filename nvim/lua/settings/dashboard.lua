@@ -23,8 +23,13 @@ dashboard.section.buttons.val = {
 	dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
 	dashboard.button("c", "  > Neovim Config", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
 	dashboard.button("v", "  > Vimwiki", ":VimwikiIndex<CR>"),
+	dashboard.button("p", "  > Web Page", ":e ~/Coding/blog/config.yaml | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+	dashboard.button(
+		"t",
+		"  > Thesis",
+		":e ~/Documents/Clases/Thesis/thesis.tex | :cd%:p:h | split . | wincmd k | pwd<CR>"
+	),
 	dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
-	dashboard.button("p", "爵 > Web Page", ":e ~/Coding/blog/config.yaml | :cd %:p:h | split . | wincmd k | pwd<CR>"),
 }
 
 dashboard.section.footer.val = "On my way to success"

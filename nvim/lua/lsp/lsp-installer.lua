@@ -15,15 +15,10 @@ lsp_installer.on_server_ready(function(server)
 		local sumneko_opts = require("lsp.servers.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
-	-- CSS
-	if server.name == "cssls" then
-		local cssls_opts = require("lsp.servers.cssls")
-		opts = vim.tbl_deep_extend("force", cssls_opts, opts)
-	end
-	-- HTML
-	if server.name == "html" then
-		local html_opts = require("lsp.servers.html")
-		opts = vim.tbl_deep_extend("force", html_opts, opts)
+	-- HTML&CSS
+	if server.name == "emmet_ls" then
+		local emmet_opts = require("lsp.servers.emmet")
+		opts = vim.tbl_deep_extend("force", emmet_opts, opts)
 	end
 	-- Typescript
 	if server.name == "tsserver" then
@@ -52,9 +47,9 @@ lsp_installer.on_server_ready(function(server)
 	end
 
 	-- Markdown
-	if server.name == "zeta_note" then
-		local zeta_opts = require("lsp.servers.zeta")
-		opts = vim.tbl_deep_extend("force", zeta_opts, opts)
+	if server.name == "marksman" then
+		local marksman_opts = require("lsp.servers.marksman")
+		opts = vim.tbl_deep_extend("force", marksman_opts, opts)
 	end
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
