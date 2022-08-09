@@ -121,4 +121,13 @@ return require("packer").startup(function()
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({ "williamboman/mason.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" })
 end)

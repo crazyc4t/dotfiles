@@ -92,13 +92,13 @@ M.on_attach = function(client, bufnr)
 	if client.name == "gopls" then
 		client.resolved_capabilities.document_formatting = false
 	end
-	if client.name == "pyright" then
+	if client.name == "pylsp" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false
 	end
-        if client.name == "ltex" then
+	if client.name == "ltex" then
 		client.resolved_capabilities.document_formatting = false
 	end
 
