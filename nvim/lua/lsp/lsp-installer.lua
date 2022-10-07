@@ -51,6 +51,12 @@ lsp_installer.on_server_ready(function(server)
 		local marksman_opts = require("lsp.servers.marksman")
 		opts = vim.tbl_deep_extend("force", marksman_opts, opts)
 	end
+
+	-- C
+	if server.name == "clangd" then
+		local clang_opts = require("lsp.servers.clang")
+		opts = vim.tbl_deep_extend("force", clang_opts, opts)
+	end
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)

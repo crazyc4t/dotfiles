@@ -62,7 +62,7 @@ return require("packer").startup(function()
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Colorscheme
-	use("folke/tokyonight.nvim")
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Emmet
 	use("mattn/emmet-vim")
@@ -121,6 +121,7 @@ return require("packer").startup(function()
 			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 		end,
 	})
+
 	-- install without yarn or npm
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -128,6 +129,8 @@ return require("packer").startup(function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+
+	-- LSP, formatter, linter installer
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 end)
