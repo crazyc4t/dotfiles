@@ -221,6 +221,11 @@ _G.packer_plugins = {
     path = "/home/said/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-transparent"] = {
+    loaded = true,
+    path = "/home/said/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -285,11 +290,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/said/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
-  },
-  vimwiki = {
-    loaded = true,
-    path = "/home/said/.local/share/nvim/site/pack/packer/start/vimwiki",
-    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
